@@ -31,7 +31,7 @@ export class TrainService {
           PlaceResult.map((places) => {
             if (places.embedded_type === 'stop_area') {
               const newPlace: Place = {
-                id: places.administrative_region?.id || '',
+                id: places?.id || '',
                 name: places.stop_area?.label || '',
               };
               placeList = [...placeList, newPlace];

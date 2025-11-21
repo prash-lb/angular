@@ -7,21 +7,37 @@
     <div class="flex items-center space-x-4">
       <a
         class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md font-medium"
+        routerLink=""
       >
-        Login
+        Voyager
       </a>
 
       <a
         class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md font-medium"
       >
-        Profil
+        Billet
+      </a>
+      <a
+        class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md font-medium"
+      >
+        Compte
       </a>
 
+      @if (!auth.connecte()) {
       <a
         class="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700"
+        routerLink="/connexion"
       >
-        Réservation
+        Se connecter
       </a>
+      } @if (auth.connecte()) {
+      <a
+        class="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700"
+        (click)="deconnexion()"
+      >
+        Se déconnecter
+      </a>
+      }
     </div>
   </nav>
 </header>

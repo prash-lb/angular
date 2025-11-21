@@ -2,12 +2,14 @@ import { inject, Injectable, signal } from '@angular/core';
 import { User, UserResponse } from '../interface/User.interface';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap, tap, throwError } from 'rxjs';
+import { LocalService } from './local.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private http = inject(HttpClient);
+  private local = inject(LocalService);
   private apiJsonServer = 'http://localhost:3000/';
   connecte = signal<boolean>(false);
 
@@ -39,13 +41,21 @@ export class AuthService {
         const user = data.find(
           (users) => users.email === email && users.password === password
         );
-        console.log(user);
         if (!user) {
           throw new Error('Invalid User');
         } else {
+          this.local.saveData('firstname', user.firstname);
+          this.local.saveData('lastname', user.lastname);
+          this.local.saveData('email', user.email);
+          this.connecte.set(true);
           return user;
         }
       })
     );
+  }
+
+  public deconnexion() {
+    this.local.clearData();
+    this.connecte.set(false);
   }
 }

@@ -7,16 +7,19 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../shared/auth.service';
 import { User, UserResponse } from '../../interface/User.interface';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss',
 })
 export class SigninComponent {
   authService = inject(AuthService);
   emailTaken = signal<boolean>(false);
+  router = inject(Router);
+
   form: FormGroup<{
     firstName: FormControl<string | null>;
     lastName: FormControl<string | null>;
@@ -41,6 +44,7 @@ export class SigninComponent {
     };
     this.authService.postUsers(user).subscribe({
       next: () => {
+        this.router.navigateByUrl('connexion');
         this.emailTaken.set(false);
       },
       error: (err: Error) => {

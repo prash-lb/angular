@@ -6,16 +6,18 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../shared/auth.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   authService = inject(AuthService);
   loginFailed = signal<boolean>(false);
+  router = inject(Router);
   form: FormGroup<{
     email: FormControl<string | null>;
     password: FormControl<string | null>;
@@ -32,7 +34,7 @@ export class LoginComponent {
     const password = this.form.value.password ?? '';
     this.authService.connexion(email, password).subscribe({
       next: () => {
-        console.log('connecté');
+        this.router.navigateByUrl('');
         this.loginFailed.set(false);
       },
       error: (err: Error) => {
