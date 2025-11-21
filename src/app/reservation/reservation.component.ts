@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reservation',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './reservation.component.html',
-  styleUrl: './reservation.component.scss'
+  styleUrls: ['./reservation.component.scss'],
 })
-export class ReservationComponent {
-
-}
+export class ReservationComponent {}
