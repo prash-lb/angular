@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 
@@ -10,10 +10,10 @@ import { AuthService } from '../shared/auth.service';
   schemas: [],
 })
 export class HeaderComponent {
-  auth = inject(AuthService);
-  router = inject(Router);
+  public auth: AuthService = inject(AuthService);
+  public router: Router = inject(Router);
 
-  deconnexion() {
+  public deconnexion(): void {
     this.auth.deconnexion();
     this.router.navigateByUrl('');
   }

@@ -3,6 +3,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { AccountComponent } from './account/account.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,5 +20,10 @@ export const routes: Routes = [
   {
     path: 'reservation/:id/:name',
     component: ReservationComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
+    canActivate: [AuthGuard],
   },
 ];

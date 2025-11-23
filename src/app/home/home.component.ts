@@ -11,27 +11,25 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  trainService = inject(TrainService);
-  router = inject(Router);
-  autoCompleteVille = signal<Place[]>([]);
-  searchText: string = '';
-  selectedVille = signal<Place | undefined>(undefined);
+  public trainService = inject(TrainService);
+  public router = inject(Router);
+  public autoCompleteVille = signal<Place[]>([]);
+  public searchText: string = '';
+  public selectedVille = signal<Place | undefined>(undefined);
 
-  autoComplete(i: string) {
+  public autoComplete(i: string): void {
     this.trainService.autoCompletionPlace(i).subscribe((data) => {
       this.autoCompleteVille.set(data);
-      console.log('liste:', this.autoCompleteVille());
     });
   }
 
-  selectSuggestion(place: Place) {
+  public selectSuggestion(place: Place): void {
     this.searchText = place.name;
     this.selectedVille.set(place);
     this.autoCompleteVille.set([]);
   }
 
-  redirectionReservation() {
-    console.log('place :', this.selectedVille());
+  public redirectionReservation(): void {
     this.router.navigate([
       '/reservation',
       this.selectedVille()?.id,

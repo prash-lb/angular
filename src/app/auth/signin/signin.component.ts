@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../shared/auth.service';
-import { User, UserResponse } from '../../interface/User.interface';
+import { User } from '../../interface/User.interface';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -16,11 +16,11 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './signin.component.scss',
 })
 export class SigninComponent {
-  authService = inject(AuthService);
-  emailTaken = signal<boolean>(false);
-  router = inject(Router);
+  public authService: AuthService = inject(AuthService);
+  public emailTaken: WritableSignal<boolean> = signal<boolean>(false);
+  public router: Router = inject(Router);
 
-  form: FormGroup<{
+  public form: FormGroup<{
     firstName: FormControl<string | null>;
     lastName: FormControl<string | null>;
     email: FormControl<string | null>;
@@ -35,7 +35,7 @@ export class SigninComponent {
     password: new FormControl<string | null>('', [Validators.required]),
   });
 
-  onSubmit() {
+  public onSubmit(): void {
     const user: User = {
       email: this.form.value.email ? this.form.value.email : '',
       password: this.form.value.password ? this.form.value.password : '',
