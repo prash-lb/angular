@@ -1,24 +1,37 @@
-<div class="timeline">
-  <div class="timeline__steps">
-    <div
-      class="timeline__step"
-      *ngFor="let s of stops; let i = index; let last = last"
-      [class.timeline__step--last]="last"
-    >
-      <!-- Numéro étape + heure -->
-      <div class="timeline__header">
-        <div class="timeline__number">{{ i + 1 }}</div>
-        <div class="timeline__time">{{ s.time }}</div>
-      </div>
+<div class="flex justify-center p-8 bg-gray-50 min-h-screen">
+  <div class="relative max-w-sm w-full">
+    <div class="absolute left-4 top-0 bottom-0 w-1 bg-indigo-600"></div>
 
-      <!-- Contenu étape -->
-      <div class="timeline__content">
-        <p class="timeline__title">{{ s.title }}</p>
-        <p class="timeline__subtitle" *ngIf="s.subtitle">{{ s.subtitle }}</p>
+    <div class="relative mb-8 pl-10">
+      <div
+        class="absolute left-0 top-0 w-8 h-8 rounded-full bg-white border-4 border-indigo-600 flex items-center justify-center"
+      >
+        <span class="text-xs font-bold text-gray-800">08:00</span>
       </div>
+      <div class="ml-4 pt-1">
+        <p class="text-lg font-semibold text-gray-900">Départ de la maison</p>
+        <p class="text-sm text-gray-500">Début de l'activité</p>
+      </div>
+    </div>
 
-      <!-- Connecteur -->
-      <div class="timeline__connector" *ngIf="!last"></div>
+    <div class="relative mb-8 pl-10 pt-20">
+      <div class="absolute left-6 top-10 text-sm text-indigo-700 font-medium">
+        3h30
+      </div>
+    </div>
+
+    <div class="relative pl-10">
+      <div
+        class="absolute left-0 top-0 w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center"
+      >
+        <span class="text-xs font-bold text-white">11:30</span>
+      </div>
+      <div class="ml-4 pt-1">
+        <p class="text-lg font-semibold text-gray-900">
+          Arrivée à la destination
+        </p>
+        <p class="text-sm text-gray-500">Fin de l'événement</p>
+      </div>
     </div>
   </div>
 </div>

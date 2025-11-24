@@ -1,5 +1,11 @@
 <!-- Overlay + backdrop -->
-<div class="overlay" *ngIf="open" (click)="onClose()" role="presentation" aria-hidden="true">
+<div
+  class="overlay"
+  *ngIf="open"
+  (click)="onClose()"
+  role="presentation"
+  aria-hidden="true"
+>
   <div class="backdrop"></div>
 
   <!-- Panel (drawer) -->
@@ -12,7 +18,14 @@
   >
     <header class="modal__header">
       <h2 id="modal-title">{{ title }}</h2>
-      <button class="close-btn" type="button" (click)="onClose()" aria-label="Fermer">×</button>
+      <button
+        class="close-btn"
+        type="button"
+        (click)="onClose()"
+        aria-label="Fermer"
+      >
+        ×
+      </button>
     </header>
 
     <div class="modal__content">
