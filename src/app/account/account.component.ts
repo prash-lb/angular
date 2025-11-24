@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import { LocalService } from '../shared/local.service';
 import { UserResponse } from '../interface/User.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -42,6 +43,7 @@ export class AccountComponent implements OnInit {
   lastName: string | null = '';
   email: string | null = '';
   success: 'success' | 'fail' | '' = '';
+  router: Router = inject(Router);
 
   private getLocale(): void {
     this.firstName = this.local.getData('firstname');
@@ -62,6 +64,7 @@ export class AccountComponent implements OnInit {
       next: (value) => {
         if (value) {
           this.auth.deconnexion();
+          this.router.navigateByUrl('/');
         }
       },
     });

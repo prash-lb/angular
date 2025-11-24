@@ -1,44 +1,48 @@
-<header class="bg-white shadow-md">
-  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div>
-      <a class="text-2xl font-bold text-gray-800"> MonSite </a>
-    </div>
-
-    <div class="flex items-center space-x-4">
+<header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
       <a
-        class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md font-medium"
-        routerLink=""
+        [routerLink]="['/']"
+        class="flex items-center gap-2 text-xl font-bold transition-opacity hover:opacity-80"
       >
-        Voyager
+        <lucide-icon [img]="Train" class="size-8 text-blue-600"></lucide-icon>
+        <span class="text-blue-600">VoyageConnect</span>
       </a>
 
-      <a
-        class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md font-medium"
-      >
-        Billet
-      </a>
-      <a
-        class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md font-medium"
-        routerLink="/account"
-      >
-        Compte
-      </a>
+      <div class="flex items-center gap-1">
+        <a
+          [routerLink]="['/billet']"
+          class="flex items-center gap-2 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 text-sm md:text-base ml-2"
+        >
+          <lucide-icon [img]="Ticket" class="size-5"></lucide-icon>
+          <span class="hidden sm:inline">Mes Billets</span>
+        </a>
+        <a
+          [routerLink]="['/account']"
+          class="flex items-center gap-2 px-3 py-2 rounded-lg transition-colors text-slate-600 hover:bg-slate-50 text-sm md:text-base ml-2"
+        >
+          <lucide-icon [img]="User" class="size-5"></lucide-icon>
+          <span class="hidden sm:inline">Mon compte</span>
+        </a>
 
-      @if (!auth.connecte()) {
-      <a
-        class="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700"
-        routerLink="/connexion"
-      >
-        Se connecter
-      </a>
-      } @if (auth.connecte()) {
-      <a
-        class="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700"
-        (click)="deconnexion()"
-      >
-        Se déconnecter
-      </a>
-      }
+        @if (!auth.connecte()) {
+        <a
+          [routerLink]="['/connexion']"
+          class="hidden md:flex items-center gap-1.5 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 ml-4 shadow-md transition-colors text-sm"
+        >
+          <lucide-icon [img]="LogIn" class="size-4"></lucide-icon>
+          Se connecter
+        </a>
+        } @else {
+        <button
+          (click)="deconnexion()"
+          class="hidden md:flex items-center gap-1.5 bg-red-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-600 ml-4 shadow-md transition-colors text-sm"
+        >
+          <lucide-icon [img]="LogOut" class="size-4"></lucide-icon>
+          Se déconnecter
+        </button>
+        }
+      </div>
     </div>
   </nav>
 </header>

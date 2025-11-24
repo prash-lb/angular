@@ -18,12 +18,16 @@ export const routes: Routes = [
     component: SigninComponent,
   },
   {
-    path: 'reservation/:id/:name',
+    path: 'reservation',
     component: ReservationComponent,
   },
   {
     path: 'account',
     component: AccountComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'billet',
+    component: HomeComponent,
   },
 ];
