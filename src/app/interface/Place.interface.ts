@@ -70,3 +70,53 @@ export interface StopArea {
   links: any[];
   administrative_regions: AdministrativeRegion[];
 }
+
+export interface ApiResponseJourneys {
+  journeys: JourneyResult[];
+  disruptions: any[];
+  links: Link[];
+}
+
+export interface JourneyResult {
+  id: string;
+  status: string;
+  departure_date_time: string; // YYYYMMDDTHHMMSS
+  arrival_date_time: string;
+  duration: number; // secondes
+  nb_transfers: number;
+  sections: Section[];
+}
+
+export interface Section {
+  id: string;
+  type: string; // "public_transport", "transfer", "street_network"
+  departure_date_time: string;
+  arrival_date_time: string;
+  duration: number;
+  from?: StationInfo;
+  to?: StationInfo;
+  display_informations?: DisplayInfo;
+}
+
+export interface StationInfo {
+  id: string;
+  name: string;
+}
+
+export interface DisplayInfo {
+  network: string;
+  mode: string;
+  direction: string;
+  commercial_mode: string;
+  line: string;
+}
+
+export interface Journey {
+  id: string;
+  origin: string;
+  destination: string;
+  departureTime: string; // Format HHhMM
+  arrivalTime: string;
+  duration: number; // en secondes
+  sections: Section[];
+}

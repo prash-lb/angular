@@ -1,0 +1,24 @@
+<div class="timeline">
+  <div class="timeline__steps">
+    <div
+      class="timeline__step"
+      *ngFor="let s of stops; let i = index; let last = last"
+      [class.timeline__step--last]="last"
+    >
+      <!-- Numéro étape + heure -->
+      <div class="timeline__header">
+        <div class="timeline__number">{{ i + 1 }}</div>
+        <div class="timeline__time">{{ s.time }}</div>
+      </div>
+
+      <!-- Contenu étape -->
+      <div class="timeline__content">
+        <p class="timeline__title">{{ s.title }}</p>
+        <p class="timeline__subtitle" *ngIf="s.subtitle">{{ s.subtitle }}</p>
+      </div>
+
+      <!-- Connecteur -->
+      <div class="timeline__connector" *ngIf="!last"></div>
+    </div>
+  </div>
+</div>
