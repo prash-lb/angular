@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Horaire } from '../interface/Horaire.interface';
 import {
   ApiResponseGetPlace,
   PlaceResult,
@@ -66,14 +65,12 @@ export class TrainService {
         map((data) => {
           return data.journeys.map((journey) => {
             console.log('journey : ', journey);
-            const departure = journey.departure_date_time;
-            const arrival = journey.arrival_date_time;
             return {
               id: journey.id,
               origin: originId,
               destination: destinationId,
-              departureTime: this.formatTime(departure),
-              arrivalTime: this.formatTime(arrival),
+              departureTime: this.formatTime(journey.departure_date_time),
+              arrivalTime: this.formatTime(journey.arrival_date_time),
               duration: journey.duration,
               sections: journey.sections,
             };
@@ -88,6 +85,4 @@ export class TrainService {
     const minutes = dateTimeStr.substring(11, 13);
     return `${hours}h${minutes}`;
   }
-
-  public getTrainHoraires(horaireFrom: Horaire, horaireTo: Horaire) {}
 }

@@ -70,6 +70,8 @@ export class HomeComponent {
         depart: JSON.stringify(this.selectedDepart),
         nombreVoyageur: this.passagers,
         dateDepart: this.date,
+        dateArrive: '',
+        duration: '',
       };
       this.router.navigate(['/reservation', voyage]);
     }

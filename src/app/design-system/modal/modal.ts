@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,12 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./modal.scss'],
 })
 export class Modal {
-  /** Titre du modal */
-  @Input() title = '';
-  /** Contrôle de visibilité */
-  @Input() open = false;
-  /** Événement fermeture */
-  @Output() close = new EventEmitter<void>();
+  title = input<string>('');
+  open = input<boolean>(false);
+  close = output<void>();
 
   onClose(): void {
     this.close.emit();

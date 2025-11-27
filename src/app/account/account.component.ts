@@ -23,7 +23,7 @@ import { Router } from '@angular/router';
   styleUrl: './account.component.scss',
 })
 export class AccountComponent implements OnInit {
-  userForm: FormGroup<{
+  public userForm: FormGroup<{
     firstName: FormControl<string | null>;
     lastName: FormControl<string | null>;
     email: FormControl<string | null>;
@@ -35,21 +35,22 @@ export class AccountComponent implements OnInit {
     password: new FormControl<string | null>(''),
   });
 
-  connecte: boolean = false;
-  auth: AuthService = inject(AuthService);
-  local: LocalService = inject(LocalService);
-  edition: WritableSignal<boolean> = signal<boolean>(false);
-  firstName: string | null = '';
-  lastName: string | null = '';
-  email: string | null = '';
-  success: 'success' | 'fail' | '' = '';
-  router: Router = inject(Router);
+  public connecte: boolean = false;
+  public auth: AuthService = inject(AuthService);
+  public local: LocalService = inject(LocalService);
+  public edition: WritableSignal<boolean> = signal<boolean>(false);
+  public firstName: string | null = '';
+  public lastName: string | null = '';
+  public email: string | null = '';
+  public success: 'success' | 'fail' | '' = '';
+  public router: Router = inject(Router);
 
   private getLocale(): void {
     this.firstName = this.local.getData('firstname');
     this.lastName = this.local.getData('lastname');
     this.email = this.local.getData('email');
   }
+
   ngOnInit(): void {
     this.getLocale();
   }

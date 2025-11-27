@@ -1,35 +1,59 @@
-<!-- Overlay + backdrop -->
+@if(open()){
 <div
-  class="overlay"
-  *ngIf="open"
-  (click)="onClose()"
-  role="presentation"
-  aria-hidden="true"
+  class="relative z-50"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
 >
-  <div class="backdrop"></div>
-
-  <!-- Panel (drawer) -->
   <div
-    class="modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-title"
-    (click)="$event.stopPropagation()"
-  >
-    <header class="modal__header">
-      <h2 id="modal-title">{{ title }}</h2>
-      <button
-        class="close-btn"
-        type="button"
-        (click)="onClose()"
-        aria-label="Fermer"
-      >
-        ×
-      </button>
-    </header>
+    class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm transition-opacity"
+    (click)="onClose()"
+  ></div>
 
-    <div class="modal__content">
-      <ng-content></ng-content>
+  <div class="fixed inset-0 z-10 w-screen overflow-hidden pointer-events-none">
+    <div class="flex h-full w-full justify-end">
+      <div
+        class="relative pointer-events-auto transform transition-transform duration-300 translate-x-0 h-full w-full max-w-sm bg-white text-left shadow-2xl overflow-y-auto"
+        (click)="$event.stopPropagation()"
+      >
+        <div
+          class="sticky top-0 bg-white px-6 py-4 flex items-center justify-between border-b border-gray-100 z-20"
+        >
+          <h2
+            class="text-lg font-semibold leading-6 text-gray-900"
+            id="modal-title"
+          >
+            {{ title() }}
+          </h2>
+
+          <button
+            type="button"
+            class="rounded-full p-1.5 text-gray-400 hover:text-gray-500 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            (click)="onClose()"
+            aria-label="Fermer"
+          >
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="px-6 py-6">
+          <ng-content></ng-content>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+}

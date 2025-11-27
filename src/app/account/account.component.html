@@ -177,14 +177,12 @@
     </p>
   </div>
 
-  <!-- Notifications (Succès / Erreur) -->
   @if (updateSuccess) {
   <div
     class="mb-6 rounded-md bg-green-50 p-4 border border-green-200 animate-in fade-in slide-in-from-top-2"
   >
     <div class="flex">
       <div class="flex-shrink-0">
-        <!-- Icone Success -->
         <svg
           class="h-5 w-5 text-green-400"
           viewBox="0 0 20 20"
@@ -210,7 +208,6 @@
   >
     <div class="flex">
       <div class="flex-shrink-0">
-        <!-- Icone Error -->
         <svg
           class="h-5 w-5 text-red-400"
           viewBox="0 0 20 20"
@@ -232,11 +229,9 @@
   </div>
   }
 
-  <!-- Carte Principale : Informations -->
   <div
     class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
   >
-    <!-- Header de la Carte -->
     <div
       class="p-6 flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 gap-4"
     >
@@ -256,7 +251,6 @@
         (click)="editMode()"
         class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 disabled:pointer-events-none disabled:opacity-50 border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 h-9 px-4 py-2 shadow-sm"
       >
-        <!-- Icone Edit -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -277,11 +271,9 @@
       }
     </div>
 
-    <!-- Contenu de la Carte -->
     <div class="p-6">
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Champ Nom -->
           <div class="space-y-2">
             <label
               for="lastName"
@@ -325,7 +317,6 @@
             }
           </div>
 
-          <!-- Champ Prénom -->
           <div class="space-y-2">
             <label
               for="firstName"
@@ -365,7 +356,6 @@
             }
           </div>
 
-          <!-- Champ Email -->
           <div class="space-y-2">
             <label
               for="email"
@@ -413,7 +403,6 @@
             }
           </div>
 
-          <!-- Champ Mot de passe (Visible uniquement en édition) -->
           @if(edition()) {
           <div class="space-y-2">
             <label
@@ -448,7 +437,6 @@
           }
         </div>
 
-        <!-- Boutons d'action (Mode Édition) -->
         @if (edition()) {
         <div
           class="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100 animate-in fade-in slide-in-from-top-1"

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,25 +7,16 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   imports: [CommonModule],
   templateUrl: './card.html',
   styleUrls: ['./card.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Card {
-  @Input() disabled: boolean = false;
-  
-  @Input() origin!: string;
-  @Input() destination!: string;
+  public origin = input<string>('');
+  public destination = input<string>('');
+  public departureTime = input<string>('');
+  public arrivalTime = input<string>('');
+  public duration = input<string>('');
+  public buttonClick = output<void>();
 
-  @Input() departureTime!: string;
-  @Input() arrivalTime!: string;
-  @Input() duration: string = '';
-
-  @Input() button: string = 'Next';
-
-  @Output() buttonClick = new EventEmitter<void>();
-
- onReserveClick(evt?: Event): void {
-  evt?.preventDefault();
-  evt?.stopPropagation();
-  if (!this.disabled) this.buttonClick.emit();
-}
+  public onReserveClick(): void {
+    this.buttonClick.emit();
+  }
 }

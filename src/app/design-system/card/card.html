@@ -28,7 +28,7 @@
       </svg>
 
       <div>
-        <p class="text-slate-600">{{ duration }}</p>
+        <p class="text-slate-600">{{ duration() }}</p>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
           <div class="flex items-center gap-3 mb-2">
             <div>
               <p class="text-slate-600">Départ</p>
-              <h3 class="font-bold text-xl">{{ departureTime }}</h3>
+              <h3 class="font-bold text-xl">{{ departureTime() }}</h3>
             </div>
 
             <div class="flex-1 flex items-center">
@@ -68,12 +68,12 @@
 
             <div class="text-right">
               <p class="text-slate-600">Arrivée</p>
-              <h3 class="font-bold text-xl">{{ arrivalTime }}</h3>
+              <h3 class="font-bold text-xl">{{ arrivalTime() }}</h3>
             </div>
           </div>
 
           <div class="text-slate-600">
-            <p>{{ origin }} → {{ destination }}</p>
+            <p>{{ origin() }} → {{ destination() }}</p>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
     >
       <button
         type="button"
-        (click)="onReserveClick($event)"
+        (click)="onReserveClick()"
         class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors shadow-sm font-medium text-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Réserver

@@ -80,16 +80,16 @@ export interface ApiResponseJourneys {
 export interface JourneyResult {
   id: string;
   status: string;
-  departure_date_time: string; // YYYYMMDDTHHMMSS
+  departure_date_time: string;
   arrival_date_time: string;
-  duration: number; // secondes
+  duration: number;
   nb_transfers: number;
   sections: Section[];
 }
 
 export interface Section {
   id: string;
-  type: string; // "public_transport", "transfer", "street_network"
+  type: string;
   departure_date_time: string;
   arrival_date_time: string;
   duration: number;
@@ -115,8 +115,15 @@ export interface Journey {
   id: string;
   origin: string;
   destination: string;
-  departureTime: string; // Format HHhMM
+  departureTime: string;
   arrivalTime: string;
-  duration: number; // en secondes
+  duration: number;
   sections: Section[];
+}
+
+export interface TimelineStop {
+  time: string;
+  title: string;
+  subtitle?: string;
+  major?: boolean;
 }
