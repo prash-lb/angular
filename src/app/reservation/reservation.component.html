@@ -64,7 +64,11 @@
   </div>
 </div>
 
-<app-modal [open]="modalOpen" title="Détails du voyage" (close)="closeModal()">
+<app-modal
+  [open]="modalOpen()"
+  title="Détails du voyage"
+  (close)="closeModal()"
+>
   <div class="flex flex-col gap-6">
     @if (selectedTrip(); as trip) {
     <div class="bg-gray-50 rounded-xl p-5 border border-gray-100 shadow-sm">

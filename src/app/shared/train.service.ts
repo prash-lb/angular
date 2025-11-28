@@ -64,7 +64,6 @@ export class TrainService {
       .pipe(
         map((data) => {
           return data.journeys.map((journey) => {
-            console.log('journey : ', journey);
             return {
               id: journey.id,
               origin: originId,

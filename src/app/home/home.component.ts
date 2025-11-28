@@ -66,6 +66,7 @@ export class HomeComponent {
   public onSubmit(): void {
     if (this.selectedDepart && this.selectedArrivee) {
       const voyage: Voyage = {
+        id: '',
         arrive: JSON.stringify(this.selectedArrivee),
         depart: JSON.stringify(this.selectedDepart),
         nombreVoyageur: this.passagers,

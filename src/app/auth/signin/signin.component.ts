@@ -8,6 +8,7 @@ import {
 import { AuthService } from '../../shared/auth.service';
 import { User } from '../../interface/User.interface';
 import { Router, RouterLink } from '@angular/router';
+import { LocalService } from '../../shared/local.service';
 
 @Component({
   selector: 'app-signin',
@@ -34,6 +35,7 @@ export class SigninComponent {
     ]),
     password: new FormControl<string | null>('', [Validators.required]),
   });
+  public local = inject(LocalService);
 
   public onSubmit(): void {
     const user: User = {
@@ -44,7 +46,11 @@ export class SigninComponent {
     };
     this.authService.postUsers(user).subscribe({
       next: () => {
-        this.router.navigateByUrl('connexion');
+        if (this.local.getData('payload')) {
+          this.router.navigateByUrl('reservation');
+        } else {
+          this.router.navigateByUrl('connexion');
+        }
         this.emailTaken.set(false);
       },
       error: (err: Error) => {

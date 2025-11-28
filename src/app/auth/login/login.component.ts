@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../shared/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { LocalService } from '../../shared/local.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent {
   public authService: AuthService = inject(AuthService);
   public loginFailed: WritableSignal<boolean> = signal<boolean>(false);
   public router: Router = inject(Router);
+  public local = inject(LocalService);
   public form: FormGroup<{
     email: FormControl<string | null>;
     password: FormControl<string | null>;
@@ -34,7 +36,11 @@ export class LoginComponent {
     const password = this.form.value.password ?? '';
     this.authService.connexion(email, password).subscribe({
       next: () => {
-        this.router.navigateByUrl('');
+        if (this.local.getData('payload')) {
+          this.router.navigateByUrl('reservation');
+        } else {
+          this.router.navigateByUrl('');
+        }
         this.loginFailed.set(false);
       },
       error: (err: Error) => {

@@ -7,5 +7,78 @@
       "firstname": "l",
       "lastname": "tesr"
     }
+  ],
+  "billets": [
+    {
+      "id": "56f9",
+      "voyage": {
+        "depart": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "arrive": "Lyon Perrache (Lyon)",
+        "dateDepart": "07h51",
+        "dateArrive": "10h10",
+        "duration": "2h19",
+        "nombreVoyageur": 1
+      }
+    },
+    {
+      "id": "56f9",
+      "voyage": {
+        "depart": "Cormeilles-en-Parisis (Cormeilles-en-Parisis)",
+        "arrive": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "dateDepart": "01h01",
+        "dateArrive": "05h21",
+        "duration": "4h20",
+        "nombreVoyageur": 1
+      }
+    },
+    {
+      "id": "56f9",
+      "voyage": {
+        "depart": "Marseille-en-Beauvaisis (Marseille-en-Beauvaisis)",
+        "arrive": "Lyon Perrache (Lyon)",
+        "dateDepart": "08h10",
+        "dateArrive": "13h11",
+        "duration": "5h01",
+        "nombreVoyageur": 1
+      }
+    },
+    {
+      "id": "13af",
+      "idUser": "56f9",
+      "voyage": {
+        "depart": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "arrive": "Lyon Perrache (Lyon)",
+        "dateDepart": "07h00",
+        "dateArrive": "09h10",
+        "duration": "2h10",
+        "nombreVoyageur": 1
+      }
+    },
+    {
+      "id": "5b4d",
+      "idUser": "56f9",
+      "voyageId": {
+        "idVoyage": "94bb4c4048fa6f9f9c08bd8a3dfe4bf3d973f31f",
+        "depart": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "arrive": "Lyon Perrache (Lyon)",
+        "dateDepart": "07h00",
+        "dateArrive": "09h10",
+        "duration": "2h10",
+        "nombreVoyageur": 1
+      }
+    },
+    {
+      "id": "24d0",
+      "idUser": "56f9",
+      "voyageId": {
+        "idVoyage": "94bb4c4048fa6f9f9c08bd8a3dfe4bf3d973f31f",
+        "depart": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "arrive": "Lyon Perrache (Lyon)",
+        "dateDepart": "07h00",
+        "dateArrive": "09h10",
+        "duration": "2h10",
+        "nombreVoyageur": 1
+      }
+    }
   ]
 }

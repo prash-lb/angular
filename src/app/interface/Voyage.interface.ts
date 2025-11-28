@@ -1,4 +1,5 @@
 export interface Voyage {
+  id: string;
   depart: string;
   arrive: string;
   dateDepart: string;
