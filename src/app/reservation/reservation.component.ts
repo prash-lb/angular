@@ -18,11 +18,21 @@ import { AuthService } from '../shared/auth.service';
 import { LocalService } from '../shared/local.service';
 import { Router } from '@angular/router';
 import { BilletsService } from '../shared/billets.service';
+import { RechercheComponent } from '../recherche/recherche.component';
+import { AlertOnReserveDirective } from '../directive/alerte.directive';
 
 @Component({
   selector: 'app-reservation',
   standalone: true,
-  imports: [CommonModule, FormsModule, Card, Modal, Timeline],
+  imports: [
+    CommonModule,
+    FormsModule,
+    Card,
+    Modal,
+    Timeline,
+    RechercheComponent,
+    AlertOnReserveDirective,
+  ],
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.scss'],
 })
@@ -75,6 +85,11 @@ export class ReservationComponent implements OnInit {
         );
         this.loading.set(false);
       },
+      error: (err: Error) => {
+        console.error(err);
+        this.loading.set(false);
+        this.trips.set([]);
+      },
     });
   }
 
@@ -106,6 +121,15 @@ export class ReservationComponent implements OnInit {
         )
       );
     }
+
+    this.getJourneys();
+  }
+
+  public submit(Voyage: Voyage) {
+    this.placeArrival.set(JSON.parse(Voyage.arrive));
+    this.placeDepart.set(JSON.parse(Voyage.depart));
+    this.date.set(Voyage.dateDepart);
+    this.nbPassager.set(Voyage.nombreVoyageur);
 
     this.getJourneys();
   }

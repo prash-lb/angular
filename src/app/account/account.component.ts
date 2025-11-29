@@ -70,6 +70,7 @@ export class AccountComponent implements OnInit {
       },
     });
   }
+
   public onSubmit(): void {
     const user: UserResponse = {
       firstname: this.userForm.value.firstName ?? '',
@@ -90,10 +91,12 @@ export class AccountComponent implements OnInit {
       },
     });
   }
-  get updateError() {
+
+  public get updateError() {
     return this.success === 'fail';
   }
-  get updateSuccess() {
+
+  public get updateSuccess() {
     return this.success === 'success';
   }
 }

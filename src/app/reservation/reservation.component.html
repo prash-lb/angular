@@ -19,11 +19,21 @@
     </div>
     } @else {
     <div>
-      <h1>{{ this.date() }}</h1>
+      <app-recherche (voyage)="submit($event)" />
       @if(trips().length > 0 ){
-      <div class="flex items-center justify-between mb-2">
-        <h2 class="font-semibold text-lg text-gray-800">
-          {{ trips().length }} trajets disponibles
+      <div
+        class="flex items-center space-x-3 mb-6 p-4 bg-white rounded-lg shadow-lg border-l-4 border-blue-500"
+      >
+        <h2 class="font-bold text-xl text-gray-800 flex-grow">
+          <span class="text-blue-600">{{ trips().length }}</span> trajets
+          disponibles de
+          <span class="text-indigo-700">{{ this.placeDepart()?.name }}</span>
+          à
+          <span class="text-indigo-700">{{ this.placeArrival()?.name }}</span>
+          pour le
+          <span class="text-green-600">{{
+            this.date() | date : "dd MMMM YYYY"
+          }}</span>
         </h2>
       </div>
       }
@@ -188,6 +198,7 @@
       >
         <button
           type="button"
+          appReserveAlert
           class="w-full justify-center rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           (click)="reservation()"
         >
