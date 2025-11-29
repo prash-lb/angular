@@ -108,7 +108,16 @@ export interface DisplayInfo {
   mode: string;
   direction: string;
   commercial_mode: string;
-  line: string;
+
+  // Champs réellement renvoyés par Navitia (optionnels)
+  line?: string;
+  label?: string;
+  code?: string;
+  name?: string;
+  color?: string;
+  text_color?: string;
+  physical_mode?: string;
+  company?: string;
 }
 
 export interface Journey {
@@ -119,11 +128,4 @@ export interface Journey {
   arrivalTime: string;
   duration: number;
   sections: Section[];
-}
-
-export interface TimelineStop {
-  time: string;
-  title: string;
-  subtitle?: string;
-  major?: boolean;
 }

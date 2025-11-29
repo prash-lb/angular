@@ -1,6 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Voyage } from '../interface/Voyage.interface';
+import { TimelineStep } from '../interface/Timeline.interface';
 
 @Component({
   selector: 'app-timeline',
@@ -10,7 +11,9 @@ import { Voyage } from '../interface/Voyage.interface';
   styleUrls: ['./timeline.scss'],
 })
 export class Timeline {
-  public stops = input<Voyage | null>(null);
+  public voyage = input<Voyage | null>(null);
+  
+  public steps = input<TimelineStep[]>([]);
 
   public duration = input<String>('');
 

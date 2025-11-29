@@ -1,61 +1,153 @@
-@if(stops(); as voyage) {
-<div class="flex justify-center p-8 bg-gray-50 min-h-screen">
-  <div class="w-full max-w-sm">
-    <div class="flex gap-4">
-      <div class="flex flex-col items-center">
-        <div
-          class="w-8 h-8 rounded-full bg-white border-4 border-indigo-600 flex-shrink-0 z-10"
-        ></div>
-        <div class="w-1 bg-indigo-600 flex-grow min-h-[10px]"></div>
+@if (voyage(); as v) {
+<div class="relative max-w-2xl mx-auto py-2">
+  <div class="absolute left-[19px] top-2 bottom-3 w-0.5 bg-slate-200"></div>
+
+  <div class="space-y-0">
+
+    <div class="relative flex items-start gap-4 pb-8">
+      <div class="relative z-10 flex-shrink-0">
+        <div class="w-10 h-10 rounded-full bg-indigo-600 border-4 border-white flex items-center justify-center shadow-md text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
       </div>
 
-      <div class="pb-8">
-        <p class="text-lg font-semibold text-gray-900 leading-none">
-          Gare de {{ voyage.depart }}
-        </p>
-        <div class="mt-2 flex flex-col">
-          <span class="text-indigo-700 font-bold text-base">
-            {{ voyage.dateDepart }}
-          </span>
-          <span class="text-sm text-gray-500">Début du voyage</span>
+      <div class="flex-1 pt-0.5">
+        <div class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border-l-4 border-l-indigo-200 border border-slate-100">
+          
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-base font-bold text-slate-900">
+              {{ v.dateDepart }}
+            </span>
+            <span class="inline-flex items-center rounded-full border border-slate-200 px-2.5 py-0.5 text-xs font-semibold text-slate-500 bg-white">
+              Départ
+            </span>
+          </div>
+
+          <h3 class="text-lg font-semibold text-slate-900 mb-1">
+            Gare de {{ v.depart }}
+          </h3>
+          
+          <div class="mt-3">
+            <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">
+              Début du voyage
+            </span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="flex gap-4">
-      <div class="flex justify-center w-8">
-        <div class="w-1 bg-indigo-600 h-full"></div>
+   @for (step of steps(); track $index) {
+      <div class="relative flex items-start gap-4 pb-8">
+        
+        <div class="relative z-10 flex-shrink-0">
+          <div 
+            class="w-10 h-10 rounded-full border-4 border-white flex items-center justify-center shadow-md"
+            [ngClass]="{
+              'bg-slate-100 text-slate-600': step.kind === 'walk',
+              'bg-indigo-600 text-white': step.kind !== 'walk' && step.kind !== 'waiting',
+              'bg-amber-100 text-amber-600': step.kind === 'waiting'
+            }"
+          >
+            @if (step.kind === 'walk') {
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg>
+            } 
+            
+            @else if (step.kind === 'waiting') {
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
+            }
+
+            @else {
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                <path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/>
+                <path d="m9 15-1-1"/>
+                <path d="m15 15 1-1"/>
+                <path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/>
+                <path d="m8 19-2 3"/>
+                <path d="m16 19 2 3"/>
+              </svg>
+            }
+          </div>
+        </div>
+
+        <div class="flex-1 pt-0.5">
+          <div 
+            class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border-l-4 border border-slate-100"
+            [ngClass]="{
+              'border-l-slate-300': step.kind === 'walk',
+              'border-l-amber-300': step.kind === 'waiting',
+              'border-l-indigo-500': step.kind !== 'walk' && step.kind !== 'waiting'
+            }"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-base font-bold text-slate-900">
+                {{ step.startTime }} <span class="text-slate-400 font-normal mx-1">→</span> {{ step.endTime }}
+              </span>
+              @if (step.duration) {
+                <span class="inline-flex items-center rounded-full border border-slate-200 px-2.5 py-0.5 text-xs font-normal text-slate-500">
+                  {{ step.duration }}
+                </span>
+              }
+            </div>
+
+            <h3 class="text-lg font-semibold text-slate-900 mb-1">
+              {{ step.label }}
+            </h3>
+
+            @if (step.kind !== 'waiting' && step.to) {
+              <p class="text-sm text-slate-500 mb-2 font-medium">
+                {{ step.from }} vers {{ step.to }}
+              </p>
+            }
+
+            @if (step.description) {
+              <p class="text-sm text-slate-500 leading-relaxed mt-2 border-t border-slate-100 pt-2">
+                {{ step.description }}
+              </p>
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    <div class="relative flex items-start gap-4"> 
+      <div class="relative z-10 flex-shrink-0">
+        <div class="w-10 h-10 rounded-full bg-indigo-600 border-4 border-white flex items-center justify-center shadow-md text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
       </div>
 
-      <div class="py-2 flex items-center">
-        <span
-          class="text-sm font-medium text-indigo-700 bg-indigo-50 px-2 py-1 rounded"
-        >
-          Durée : {{ voyage.duration }}
-        </span>
-      </div>
-    </div>
+      <div class="flex-1 pt-0.5">
+        <div class="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border-l-4 border-l-indigo-200 border border-slate-100">
+          
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-base font-bold text-slate-900">
+              {{ v.dateArrive }}
+            </span>
+             <span class="inline-flex items-center rounded-full border border-slate-200 px-2.5 py-0.5 text-xs font-semibold text-slate-500 bg-white">
+              Arrivée
+            </span>
+          </div>
 
-    <div class="flex gap-4">
-      <div class="flex flex-col items-center">
-        <div class="w-1 bg-indigo-600 h-4"></div>
-        <div
-          class="w-8 h-8 rounded-full bg-indigo-600 flex-shrink-0 z-10 border-4 border-white shadow-sm"
-        ></div>
-      </div>
+          <h3 class="text-lg font-semibold text-slate-900 mb-1">
+            Gare de {{ v.arrive }}
+          </h3>
 
-      <div class="pt-4">
-        <p class="text-lg font-semibold text-gray-900 leading-none">
-          Gare de {{ voyage.arrive }}
-        </p>
-        <div class="mt-2 flex flex-col">
-          <span class="text-indigo-700 font-bold text-base">
-            {{ voyage.dateArrive }}
-          </span>
-          <span class="text-sm text-gray-500">Fin du voyage</span>
+          <div class="mt-3">
+            <span class="inline-flex items-center rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-500/10">
+              Fin du voyage
+            </span>
+          </div>
+
         </div>
       </div>
     </div>
+
   </div>
 </div>
 }

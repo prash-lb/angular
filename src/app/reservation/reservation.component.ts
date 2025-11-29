@@ -20,6 +20,9 @@ import { Router } from '@angular/router';
 import { BilletsService } from '../shared/billets.service';
 import { RechercheComponent } from '../recherche/recherche.component';
 import { AlertOnReserveDirective } from '../directive/alerte.directive';
+import { TimelineStep } from '../interface/Timeline.interface';
+import { buildTimelineStepsFromVoyage } from '../timeline/timeline.utils';
+import { buildNavitiaDateTime, calculateDuration } from './reservation.utils';
 
 @Component({
   selector: 'app-reservation',
@@ -41,6 +44,7 @@ export class ReservationComponent implements OnInit {
   private trainService: TrainService = inject(TrainService);
   private localService: LocalService = inject(LocalService);
   private authService: AuthService = inject(AuthService);
+
   private router: Router = inject(Router);
   private billetService: BilletsService = inject(BilletsService);
 
@@ -59,29 +63,52 @@ export class ReservationComponent implements OnInit {
   );
   public loading: WritableSignal<boolean> = signal<boolean>(false);
 
+  public steps = signal<TimelineStep[]>([]);
+
+
   private getJourneys(): void {
     const origin = this.placeDepart();
     const destination = this.placeArrival();
-    const date = this.date();
+    const rawDate = this.date();
+
     if (!origin || !destination) {
       this.trips.set([]);
       return;
     }
+
+  console.log('Raw Date:', rawDate);
+  const apiDate = buildNavitiaDateTime(rawDate);
+  console.log('API Date:', apiDate);
     this.loading.set(true);
-    this.trainService.getJourneys(origin.id, destination.id, date).subscribe({
+    this.trainService.getJourneys(origin.id, destination.id, apiDate).subscribe({
       next: (journeys) => {
         this.trips.set(
-          journeys.map((journey) => ({
-            depart: origin.name,
-            arrive: destination.name,
-            dateDepart: journey.departureTime,
-            dateArrive: journey.arrivalTime,
-            duration: this.calculateDuration(
-              journey.departureTime,
-              journey.arrivalTime
-            ),
-            nombreVoyageur: this.nbPassager(),
-          }))
+          journeys.map((journey) => {
+            const steps = buildTimelineStepsFromVoyage(journey as any);
+
+            // Tag pour les modes de transport (exclut marche/attente)
+            const transportLabels = steps
+              .filter((s) => s.kind !== 'walk' && s.kind !== 'waiting')
+              .map((s) => (s.label || s.kind).toString());
+            const previewModes = Array.from(new Set(transportLabels)).slice(0, 5);
+
+            const transfers = steps.filter((s) => s.kind === 'waiting' || s.kind === 'transfer').length;
+
+            return {
+              depart: origin.name,
+              arrive: destination.name,
+              dateDepart: journey.departureTime,
+              dateArrive: journey.arrivalTime,
+              duration: calculateDuration(
+                journey.departureTime,
+                journey.arrivalTime
+              ),
+              nombreVoyageur: this.nbPassager(),
+              sections: journey.sections,
+              previewModes,
+              transfers,
+            } as Voyage;
+          })
         );
         this.loading.set(false);
       },
@@ -122,6 +149,14 @@ export class ReservationComponent implements OnInit {
       );
     }
 
+    if (!this.date() || this.date().trim() === '') {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      this.date.set(`${year}-${month}-${day}`);
+    }
+
     this.getJourneys();
   }
 
@@ -135,30 +170,20 @@ export class ReservationComponent implements OnInit {
   }
 
   public handleReserve(trip: Voyage): void {
+    console.log('reserve clicked for trip:', trip);
+    console.log('trip.sections:', trip.sections);
+
     this.selectedTrip.set(trip);
+
+    const steps = buildTimelineStepsFromVoyage(trip);
+    console.log('Steps timeline :', steps);
+
+    this.steps.set(steps);
     this.modalOpen.set(true);
   }
 
   public closeModal(): void {
     this.modalOpen.set(false);
-  }
-
-  private calculateDuration(departure: string, arrival: string): string {
-    const depMatch = departure.match(/(\d+)h(\d+)/);
-    const arrMatch = arrival.match(/(\d+)h(\d+)/);
-
-    if (!depMatch || !arrMatch) return '';
-
-    const depMinutes = parseInt(depMatch[1]) * 60 + parseInt(depMatch[2]);
-    const arrMinutes = parseInt(arrMatch[1]) * 60 + parseInt(arrMatch[2]);
-
-    let durationMinutes = arrMinutes - depMinutes;
-    if (durationMinutes < 0) durationMinutes += 24 * 60;
-
-    const hours = Math.floor(durationMinutes / 60);
-    const minutes = durationMinutes % 60;
-
-    return `${hours}h${minutes.toString().padStart(2, '0')}`;
   }
 
   public reservation(): void {
