@@ -14,8 +14,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class TrainService {
-  private http = inject(HttpClient);
-  url = 'https://api.sncf.com/v1/';
+  private http: HttpClient = inject(HttpClient);
+  private url: string = 'https://api.sncf.com/v1/';
 
   public autoCompletionPlace(place: string): Observable<Place[]> {
     const httpHeader = new HttpHeaders({
@@ -82,6 +82,6 @@ export class TrainService {
     if (!dateTimeStr || dateTimeStr.length < 15) return '';
     const hours = dateTimeStr.substring(9, 11);
     const minutes = dateTimeStr.substring(11, 13);
-    return `${hours}h${minutes}`;
+    return `${hours}:${minutes}`;
   }
 }

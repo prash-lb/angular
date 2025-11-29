@@ -5,6 +5,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AccountComponent } from './account/account.component';
 import { AuthGuard } from './auth.guard';
+import { BilletsComponent } from './billets/billets.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,6 +29,7 @@ export const routes: Routes = [
   },
   {
     path: 'billet',
-    component: HomeComponent,
+    component: BilletsComponent,
+    canActivate: [AuthGuard],
   },
 ];

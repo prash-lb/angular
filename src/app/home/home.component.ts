@@ -66,7 +66,6 @@ export class HomeComponent {
   public onSubmit(): void {
     if (this.selectedDepart && this.selectedArrivee) {
       const voyage: Voyage = {
-        id: '',
         arrive: JSON.stringify(this.selectedArrivee),
         depart: JSON.stringify(this.selectedDepart),
         nombreVoyageur: this.passagers,
@@ -78,23 +77,3 @@ export class HomeComponent {
     }
   }
 }
-
-// public autoComplete(i: string): void {
-//   this.trainService.autoCompletionPlace(i).subscribe((data) => {
-//     this.autoCompleteVille.set(data);
-//   });
-// }
-
-// public selectSuggestion(place: Place): void {
-//   this.searchText = place.name;
-//   this.selectedVille.set(place);
-//   this.autoCompleteVille.set([]);
-// }
-
-// public redirectionReservation(): void {
-//   this.router.navigate([
-//     '/reservation',
-//     this.selectedVille()?.id,
-//     this.selectedVille()?.name,
-//   ]);
-// }

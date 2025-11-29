@@ -1,4 +1,10 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnInit,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -21,19 +27,27 @@ import { BilletsService } from '../shared/billets.service';
   styleUrls: ['./reservation.component.scss'],
 })
 export class ReservationComponent implements OnInit {
-  private activatedRoute = inject(ActivatedRoute);
-  private trainService = inject(TrainService);
-  private localService = inject(LocalService);
-  private authService = inject(AuthService);
-  public placeArrival = signal<Place | undefined>(undefined);
-  public placeDepart = signal<Place | undefined>(undefined);
-  public date = signal<string>('');
-  public nbPassager = signal<number>(1);
-  public trips = signal<Voyage[]>([]);
-  public modalOpen = signal<boolean>(false);
-  public selectedTrip = signal<Voyage | null>(null);
-  private router = inject(Router);
-  private billetService = inject(BilletsService);
+  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  private trainService: TrainService = inject(TrainService);
+  private localService: LocalService = inject(LocalService);
+  private authService: AuthService = inject(AuthService);
+  private router: Router = inject(Router);
+  private billetService: BilletsService = inject(BilletsService);
+
+  public placeArrival: WritableSignal<Place | undefined> = signal<
+    Place | undefined
+  >(undefined);
+  public placeDepart: WritableSignal<Place | undefined> = signal<
+    Place | undefined
+  >(undefined);
+  public date: WritableSignal<string> = signal<string>('');
+  public nbPassager: WritableSignal<number> = signal<number>(1);
+  public trips: WritableSignal<Voyage[]> = signal<Voyage[]>([]);
+  public modalOpen: WritableSignal<boolean> = signal<boolean>(false);
+  public selectedTrip: WritableSignal<Voyage | null> = signal<Voyage | null>(
+    null
+  );
+  public loading: WritableSignal<boolean> = signal<boolean>(false);
 
   private getJourneys(): void {
     const origin = this.placeDepart();
@@ -43,13 +57,11 @@ export class ReservationComponent implements OnInit {
       this.trips.set([]);
       return;
     }
-
-    this.trainService
-      .getJourneys(origin.id, destination.id, date)
-      .subscribe((journeys) => {
+    this.loading.set(true);
+    this.trainService.getJourneys(origin.id, destination.id, date).subscribe({
+      next: (journeys) => {
         this.trips.set(
           journeys.map((journey) => ({
-            id: journey.id,
             depart: origin.name,
             arrive: destination.name,
             dateDepart: journey.departureTime,
@@ -61,8 +73,9 @@ export class ReservationComponent implements OnInit {
             nombreVoyageur: this.nbPassager(),
           }))
         );
-      })
-      .add(() => console.log(this.trips()));
+        this.loading.set(false);
+      },
+    });
   }
 
   ngOnInit(): void {
@@ -139,9 +152,18 @@ export class ReservationComponent implements OnInit {
     } else {
       const trip = this.selectedTrip();
       if (trip) {
+        trip.dateDepart = `${this.date()}T${trip.dateDepart}`;
+        trip.dateArrive = `${this.date()}T${trip.dateArrive}`;
         this.billetService
           .postBillet(trip, this.localService.getData('id') ?? '')
-          .subscribe();
+          .subscribe({
+            next: () => {
+              this.router.navigate(['billet']);
+            },
+            error: (err: Error) => {
+              console.error(err);
+            },
+          });
       }
     }
   }
