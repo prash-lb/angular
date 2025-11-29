@@ -126,6 +126,7 @@ export class RechercheComponent {
         dateDepart: this.form.get('dateForm')?.value ?? '',
         dateArrive: '',
         duration: '',
+        sections: [],
       };
       this.voyage.emit(voyage);
     }

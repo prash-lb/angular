@@ -14,6 +14,8 @@ export class Card {
   public departureTime = input<string>('');
   public arrivalTime = input<string>('');
   public duration = input<string>('');
+  public previewModes = input<string[]>([]);
+  public transfers = input<number>(0);
   public buttonClick = output<void>();
 
   public onReserveClick(): void {

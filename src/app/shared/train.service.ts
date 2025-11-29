@@ -59,6 +59,10 @@ export class TrainService {
     if (date) {
       url += `&datetime=${date}`;
     }
+
+     console.log('Navitia URL', url);
+     console.log('Date param:', date);
+
     return this.http
       .get<ApiResponseJourneys>(url, { headers: httpHeader })
       .pipe(
