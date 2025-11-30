@@ -20,7 +20,7 @@ Pour lancer l'application, vous devez exécuter trois étapes principales : inst
 
 Ouvrez votre terminal dans le répertoire racine du projet et exécutez la commande d'installation des packages :
 
-npm install
+npm install --legacy-peer-deps
 
 2. Configuration de l'API SNCF
 
