@@ -65,7 +65,6 @@ export class ReservationComponent implements OnInit {
 
   public steps = signal<TimelineStep[]>([]);
 
-
   private getJourneys(): void {
     const origin = this.placeDepart();
     const destination = this.placeArrival();
@@ -76,48 +75,52 @@ export class ReservationComponent implements OnInit {
       return;
     }
 
-  console.log('Raw Date:', rawDate);
-  const apiDate = buildNavitiaDateTime(rawDate);
-  console.log('API Date:', apiDate);
+    const apiDate = buildNavitiaDateTime(rawDate);
     this.loading.set(true);
-    this.trainService.getJourneys(origin.id, destination.id, apiDate).subscribe({
-      next: (journeys) => {
-        this.trips.set(
-          journeys.map((journey) => {
-            const steps = buildTimelineStepsFromVoyage(journey as any);
+    this.trainService
+      .getJourneys(origin.id, destination.id, apiDate)
+      .subscribe({
+        next: (journeys) => {
+          this.trips.set(
+            journeys.map((journey) => {
+              const steps = buildTimelineStepsFromVoyage(journey);
 
-            // Tag pour les modes de transport (exclut marche/attente)
-            const transportLabels = steps
-              .filter((s) => s.kind !== 'walk' && s.kind !== 'waiting')
-              .map((s) => (s.label || s.kind).toString());
-            const previewModes = Array.from(new Set(transportLabels)).slice(0, 5);
+              const transportLabels = steps
+                .filter((s) => s.kind !== 'walk' && s.kind !== 'waiting')
+                .map((s) => (s.label || s.kind).toString());
+              const previewModes = Array.from(new Set(transportLabels)).slice(
+                0,
+                5
+              );
 
-            const transfers = steps.filter((s) => s.kind === 'waiting' || s.kind === 'transfer').length;
+              const transfers = steps.filter(
+                (s) => s.kind === 'waiting' || s.kind === 'transfer'
+              ).length;
 
-            return {
-              depart: origin.name,
-              arrive: destination.name,
-              dateDepart: journey.departureTime,
-              dateArrive: journey.arrivalTime,
-              duration: calculateDuration(
-                journey.departureTime,
-                journey.arrivalTime
-              ),
-              nombreVoyageur: this.nbPassager(),
-              sections: journey.sections,
-              previewModes,
-              transfers,
-            } as Voyage;
-          })
-        );
-        this.loading.set(false);
-      },
-      error: (err: Error) => {
-        console.error(err);
-        this.loading.set(false);
-        this.trips.set([]);
-      },
-    });
+              return {
+                depart: origin.name,
+                arrive: destination.name,
+                dateDepart: journey.departureTime,
+                dateArrive: journey.arrivalTime,
+                duration: calculateDuration(
+                  journey.departureTime,
+                  journey.arrivalTime
+                ),
+                nombreVoyageur: this.nbPassager(),
+                sections: journey.sections,
+                previewModes,
+                transfers,
+              } as Voyage;
+            })
+          );
+          this.loading.set(false);
+        },
+        error: (err: Error) => {
+          console.error(err);
+          this.loading.set(false);
+          this.trips.set([]);
+        },
+      });
   }
 
   ngOnInit(): void {
@@ -129,6 +132,7 @@ export class ReservationComponent implements OnInit {
       if (payload.passager) this.nbPassager.set(Number(payload.passager));
       if (payload.voyage) this.selectedTrip.set(payload.voyage);
       if (payload.modalOpen) this.modalOpen.set(payload.modalOpen);
+      if (payload.step) this.steps.set(payload.step);
       this.localService.removeData('payload');
     } else {
       this.placeArrival.set(
@@ -170,14 +174,8 @@ export class ReservationComponent implements OnInit {
   }
 
   public handleReserve(trip: Voyage): void {
-    console.log('reserve clicked for trip:', trip);
-    console.log('trip.sections:', trip.sections);
-
     this.selectedTrip.set(trip);
-
     const steps = buildTimelineStepsFromVoyage(trip);
-    console.log('Steps timeline :', steps);
-
     this.steps.set(steps);
     this.modalOpen.set(true);
   }
@@ -195,6 +193,9 @@ export class ReservationComponent implements OnInit {
         placeDepart: this.placeDepart(),
         date: this.date(),
         modalOpen: this.modalOpen(),
+        step: buildTimelineStepsFromVoyage(
+          this.selectedTrip() ?? ({} as Voyage)
+        ),
       };
       this.localService.saveData('payload', JSON.stringify(payload));
       this.router.navigate(['connexion']);

@@ -128,6 +128,1601 @@
         "duration": "",
         "nombreVoyageur": 1
       }
+    },
+    {
+      "id": "05483cb8a7770dcd78f0085e0ecaf4da52964079",
+      "idUser": "56f9",
+      "voyage": {
+        "depart": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "arrive": "Lyon Perrache (Lyon)",
+        "dateDepart": "2025-12-01T08:59",
+        "dateArrive": "2025-12-01T11:10",
+        "duration": "2h11",
+        "nombreVoyageur": 1,
+        "sections": [
+          {
+            "id": "XVvByqTedHByUMAFLt9suQ_0",
+            "duration": 0,
+            "co2_emission": {
+              "value": 0,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T085900",
+            "arrival_date_time": "20251201T085900",
+            "to": {
+              "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+                "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                "coord": {
+                  "lon": "2.373481",
+                  "lat": "48.844945"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:75056",
+                    "name": "Paris",
+                    "level": 8,
+                    "zip_code": "75000;75116",
+                    "label": "Paris (75000-75116)",
+                    "insee": "75056",
+                    "coord": {
+                      "lon": "2.3483915",
+                      "lat": "48.8534951"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87686006",
+                  "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                  "codes": [
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87686030"
+                    },
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87758581"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87758581"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87758581"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                  "coord": {
+                    "lon": "2.373481",
+                    "lat": "48.844945"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "from": {
+              "id": "stop_area:SNCF:87686006",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+              "quality": 0,
+              "stop_area": {
+                "id": "stop_area:SNCF:87686006",
+                "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                "codes": [
+                  {
+                    "type": "secondary_id",
+                    "value": "SNCF:87686030"
+                  },
+                  {
+                    "type": "secondary_id",
+                    "value": "SNCF:87758581"
+                  },
+                  {
+                    "type": "source",
+                    "value": "87686006"
+                  },
+                  {
+                    "type": "source",
+                    "value": "87686030"
+                  },
+                  {
+                    "type": "source",
+                    "value": "87758581"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87686006"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87686030"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87758581"
+                  }
+                ],
+                "timezone": "Europe/Paris",
+                "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                "coord": {
+                  "lon": "2.373481",
+                  "lat": "48.844945"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:75056",
+                    "name": "Paris",
+                    "level": 8,
+                    "zip_code": "75000;75116",
+                    "label": "Paris (75000-75116)",
+                    "insee": "75056",
+                    "coord": {
+                      "lon": "2.3483915",
+                      "lat": "48.8534951"
+                    }
+                  }
+                ]
+              },
+              "embedded_type": "stop_area"
+            },
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  2.373481,
+                  48.844945
+                ],
+                [
+                  2.373481,
+                  48.844945
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 0
+                }
+              ]
+            },
+            "mode": "walking",
+            "type": "crow_fly",
+            "links": []
+          },
+          {
+            "id": "section_14_0",
+            "duration": 7860,
+            "co2_emission": {
+              "value": 929.4624,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T085900",
+            "arrival_date_time": "20251201T111000",
+            "base_departure_date_time": "20251201T085900",
+            "base_arrival_date_time": "20251201T111000",
+            "data_freshness": "base_schedule",
+            "to": {
+              "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+                "name": "Lyon Perrache",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87722025",
+                  "name": "Lyon Perrache",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87722025"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87722025"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "from": {
+              "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+                "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                "coord": {
+                  "lon": "2.373481",
+                  "lat": "48.844945"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:75056",
+                    "name": "Paris",
+                    "level": 8,
+                    "zip_code": "75000;75116",
+                    "label": "Paris (75000-75116)",
+                    "insee": "75056",
+                    "coord": {
+                      "lon": "2.3483915",
+                      "lat": "48.8534951"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87686006",
+                  "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                  "codes": [
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87686030"
+                    },
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87758581"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87758581"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87758581"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                  "coord": {
+                    "lon": "2.373481",
+                    "lat": "48.844945"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "additional_informations": [
+              "regular"
+            ],
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  2.373481,
+                  48.844945
+                ],
+                [
+                  4.859409,
+                  45.760596
+                ],
+                [
+                  4.825777,
+                  45.748508
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 393840
+                }
+              ]
+            },
+            "type": "public_transport",
+            "display_informations": {
+              "commercial_mode": "TGV INOUI",
+              "network": "TGV INOUI",
+              "direction": "Lyon Perrache (Lyon)",
+              "label": "Paris - Gare de Lyon - Hall 1 & 2 - Lyon Perrache",
+              "color": "",
+              "code": "",
+              "headsign": "6607",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 - Lyon Perrache",
+              "links": [
+                {
+                  "templated": false,
+                  "rel": "terminus",
+                  "internal": true,
+                  "type": "stop_area",
+                  "id": "stop_area:SNCF:87722025"
+                }
+              ],
+              "text_color": "",
+              "trip_short_name": "6607",
+              "company": "SNCF Voyageurs",
+              "description": "",
+              "physical_mode": "Train grande vitesse",
+              "equipments": []
+            },
+            "links": [
+              {
+                "type": "company",
+                "id": "company:SNCF:1187"
+              },
+              {
+                "type": "vehicle_journey",
+                "id": "vehicle_journey:SNCF:2025-12-01:6607:1187:LongDistanceTrain"
+              },
+              {
+                "type": "line",
+                "id": "line:SNCF:CSR:601100"
+              },
+              {
+                "type": "route",
+                "id": "route:SNCF:CSR:601100"
+              },
+              {
+                "type": "commercial_mode",
+                "id": "commercial_mode:OUI"
+              },
+              {
+                "type": "physical_mode",
+                "id": "physical_mode:LongDistanceTrain"
+              },
+              {
+                "type": "network",
+                "id": "network:SNCF:OUI"
+              }
+            ],
+            "stop_date_times": [
+              {
+                "departure_date_time": "20251201T085900",
+                "base_departure_date_time": "20251201T085900",
+                "arrival_date_time": "20251201T085900",
+                "base_arrival_date_time": "20251201T085900",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+                  "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                  "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                  "coord": {
+                    "lon": "2.373481",
+                    "lat": "48.844945"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              },
+              {
+                "departure_date_time": "20251201T110200",
+                "base_departure_date_time": "20251201T110200",
+                "arrival_date_time": "20251201T105600",
+                "base_arrival_date_time": "20251201T105600",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87723197:LongDistanceTrain",
+                  "name": "Lyon Part Dieu",
+                  "label": "Lyon Part Dieu (Lyon)",
+                  "coord": {
+                    "lon": "4.859409",
+                    "lat": "45.760596"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              },
+              {
+                "departure_date_time": "20251201T111000",
+                "base_departure_date_time": "20251201T111000",
+                "arrival_date_time": "20251201T111000",
+                "base_arrival_date_time": "20251201T111000",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+                  "name": "Lyon Perrache",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              }
+            ]
+          },
+          {
+            "id": "fkuazY6nYf7LyC4LHGFusk_0",
+            "duration": 0,
+            "co2_emission": {
+              "value": 0,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T111000",
+            "arrival_date_time": "20251201T111000",
+            "to": {
+              "id": "stop_area:SNCF:87722025",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_area": {
+                "id": "stop_area:SNCF:87722025",
+                "name": "Lyon Perrache",
+                "codes": [
+                  {
+                    "type": "source",
+                    "value": "87722025"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87722025"
+                  }
+                ],
+                "timezone": "Europe/Paris",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ]
+              },
+              "embedded_type": "stop_area"
+            },
+            "from": {
+              "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+                "name": "Lyon Perrache",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87722025",
+                  "name": "Lyon Perrache",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87722025"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87722025"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  4.825777,
+                  45.748508
+                ],
+                [
+                  4.825777,
+                  45.748508
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 0
+                }
+              ]
+            },
+            "mode": "walking",
+            "type": "crow_fly",
+            "links": []
+          }
+        ],
+        "previewModes": [
+          "TGV INOUI"
+        ],
+        "transfers": 0
+      }
+    },
+    {
+      "id": "a532dc93127986a56ed0c8ada50c129a73b55a4c",
+      "idUser": "56f9",
+      "voyage": {
+        "depart": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+        "arrive": "Lyon Vaise (Lyon)",
+        "dateDepart": "2025-12-01T06:20",
+        "dateArrive": "2025-12-01T08:48",
+        "duration": "2h28",
+        "nombreVoyageur": 1,
+        "sections": [
+          {
+            "id": "a4wY8YboV6qc2yEYoqXyv4_0",
+            "duration": 0,
+            "co2_emission": {
+              "value": 0,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T062000",
+            "arrival_date_time": "20251201T062000",
+            "to": {
+              "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+                "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                "coord": {
+                  "lon": "2.373481",
+                  "lat": "48.844945"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:75056",
+                    "name": "Paris",
+                    "level": 8,
+                    "zip_code": "75000;75116",
+                    "label": "Paris (75000-75116)",
+                    "insee": "75056",
+                    "coord": {
+                      "lon": "2.3483915",
+                      "lat": "48.8534951"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87686006",
+                  "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                  "codes": [
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87686030"
+                    },
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87758581"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87758581"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87758581"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                  "coord": {
+                    "lon": "2.373481",
+                    "lat": "48.844945"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "from": {
+              "id": "stop_area:SNCF:87686006",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+              "quality": 0,
+              "stop_area": {
+                "id": "stop_area:SNCF:87686006",
+                "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                "codes": [
+                  {
+                    "type": "secondary_id",
+                    "value": "SNCF:87686030"
+                  },
+                  {
+                    "type": "secondary_id",
+                    "value": "SNCF:87758581"
+                  },
+                  {
+                    "type": "source",
+                    "value": "87686006"
+                  },
+                  {
+                    "type": "source",
+                    "value": "87686030"
+                  },
+                  {
+                    "type": "source",
+                    "value": "87758581"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87686006"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87686030"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87758581"
+                  }
+                ],
+                "timezone": "Europe/Paris",
+                "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                "coord": {
+                  "lon": "2.373481",
+                  "lat": "48.844945"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:75056",
+                    "name": "Paris",
+                    "level": 8,
+                    "zip_code": "75000;75116",
+                    "label": "Paris (75000-75116)",
+                    "insee": "75056",
+                    "coord": {
+                      "lon": "2.3483915",
+                      "lat": "48.8534951"
+                    }
+                  }
+                ]
+              },
+              "embedded_type": "stop_area"
+            },
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  2.373481,
+                  48.844945
+                ],
+                [
+                  2.373481,
+                  48.844945
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 0
+                }
+              ]
+            },
+            "mode": "walking",
+            "type": "crow_fly",
+            "links": []
+          },
+          {
+            "id": "section_46_0",
+            "duration": 8100,
+            "co2_emission": {
+              "value": 940.75028,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T062000",
+            "arrival_date_time": "20251201T083500",
+            "base_departure_date_time": "20251201T062000",
+            "base_arrival_date_time": "20251201T083500",
+            "data_freshness": "base_schedule",
+            "to": {
+              "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+                "name": "Lyon Perrache",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87722025",
+                  "name": "Lyon Perrache",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87722025"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87722025"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "from": {
+              "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+                "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                "coord": {
+                  "lon": "2.373481",
+                  "lat": "48.844945"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:75056",
+                    "name": "Paris",
+                    "level": 8,
+                    "zip_code": "75000;75116",
+                    "label": "Paris (75000-75116)",
+                    "insee": "75056",
+                    "coord": {
+                      "lon": "2.3483915",
+                      "lat": "48.8534951"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87686006",
+                  "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                  "codes": [
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87686030"
+                    },
+                    {
+                      "type": "secondary_id",
+                      "value": "SNCF:87758581"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "source",
+                      "value": "87758581"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686006"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87686030"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87758581"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                  "coord": {
+                    "lon": "2.373481",
+                    "lat": "48.844945"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "additional_informations": [
+              "regular"
+            ],
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  2.373481,
+                  48.844945
+                ],
+                [
+                  4.49943,
+                  46.765339
+                ],
+                [
+                  4.859409,
+                  45.760596
+                ],
+                [
+                  4.825777,
+                  45.748508
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 398623
+                }
+              ]
+            },
+            "type": "public_transport",
+            "display_informations": {
+              "commercial_mode": "TGV INOUI",
+              "network": "TGV INOUI",
+              "direction": "Lyon Perrache (Lyon)",
+              "label": "Paris - Gare de Lyon - Hall 1 & 2 - Lyon Perrache",
+              "color": "",
+              "code": "",
+              "headsign": "6641",
+              "name": "Paris - Gare de Lyon - Hall 1 & 2 - Lyon Perrache",
+              "links": [
+                {
+                  "templated": false,
+                  "rel": "terminus",
+                  "internal": true,
+                  "type": "stop_area",
+                  "id": "stop_area:SNCF:87722025"
+                }
+              ],
+              "text_color": "",
+              "trip_short_name": "6641",
+              "company": "SNCF Voyageurs",
+              "description": "",
+              "physical_mode": "Train grande vitesse",
+              "equipments": []
+            },
+            "links": [
+              {
+                "type": "company",
+                "id": "company:SNCF:1187"
+              },
+              {
+                "type": "vehicle_journey",
+                "id": "vehicle_journey:SNCF:2025-12-01:6641:1187:LongDistanceTrain"
+              },
+              {
+                "type": "line",
+                "id": "line:SNCF:CSR:601100"
+              },
+              {
+                "type": "route",
+                "id": "route:SNCF:CSR:601100"
+              },
+              {
+                "type": "commercial_mode",
+                "id": "commercial_mode:OUI"
+              },
+              {
+                "type": "physical_mode",
+                "id": "physical_mode:LongDistanceTrain"
+              },
+              {
+                "type": "network",
+                "id": "network:SNCF:OUI"
+              }
+            ],
+            "stop_date_times": [
+              {
+                "departure_date_time": "20251201T062000",
+                "base_departure_date_time": "20251201T062000",
+                "arrival_date_time": "20251201T062000",
+                "base_arrival_date_time": "20251201T062000",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87686006:LongDistanceTrain",
+                  "name": "Paris - Gare de Lyon - Hall 1 & 2",
+                  "label": "Paris - Gare de Lyon - Hall 1 & 2 (Paris)",
+                  "coord": {
+                    "lon": "2.373481",
+                    "lat": "48.844945"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              },
+              {
+                "departure_date_time": "20251201T074300",
+                "base_departure_date_time": "20251201T074300",
+                "arrival_date_time": "20251201T074000",
+                "base_arrival_date_time": "20251201T074000",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87694109:LongDistanceTrain",
+                  "name": "Le Creusot - Montceau-les-Mines - Montchanin TGV",
+                  "label": "Le Creusot - Montceau-les-Mines - Montchanin TGV (Écuisses)",
+                  "coord": {
+                    "lon": "4.49943",
+                    "lat": "46.765339"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              },
+              {
+                "departure_date_time": "20251201T082700",
+                "base_departure_date_time": "20251201T082700",
+                "arrival_date_time": "20251201T082200",
+                "base_arrival_date_time": "20251201T082200",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87723197:LongDistanceTrain",
+                  "name": "Lyon Part Dieu",
+                  "label": "Lyon Part Dieu (Lyon)",
+                  "coord": {
+                    "lon": "4.859409",
+                    "lat": "45.760596"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              },
+              {
+                "departure_date_time": "20251201T083500",
+                "base_departure_date_time": "20251201T083500",
+                "arrival_date_time": "20251201T083500",
+                "base_arrival_date_time": "20251201T083500",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+                  "name": "Lyon Perrache",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              }
+            ]
+          },
+          {
+            "id": "section_47_0",
+            "duration": 300,
+            "co2_emission": {
+              "value": 0,
+              "unit": "gEC"
+            },
+            "transfer_type": "walking",
+            "departure_date_time": "20251201T083500",
+            "arrival_date_time": "20251201T084000",
+            "to": {
+              "id": "stop_point:SNCF:87722025:Train",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87722025:Train",
+                "name": "Lyon Perrache",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87722025",
+                  "name": "Lyon Perrache",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87722025"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87722025"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "from": {
+              "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87722025:LongDistanceTrain",
+                "name": "Lyon Perrache",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87722025",
+                  "name": "Lyon Perrache",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87722025"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87722025"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  4.825777,
+                  45.748508
+                ],
+                [
+                  4.825777,
+                  45.748508
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 0
+                }
+              ]
+            },
+            "type": "transfer",
+            "links": []
+          },
+          {
+            "id": "section_48_0",
+            "duration": 240,
+            "co2_emission": {
+              "value": 0,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T084000",
+            "arrival_date_time": "20251201T084400",
+            "type": "waiting",
+            "links": []
+          },
+          {
+            "id": "section_49_0",
+            "duration": 240,
+            "co2_emission": {
+              "value": 45.9102,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T084400",
+            "arrival_date_time": "20251201T084800",
+            "base_departure_date_time": "20251201T084400",
+            "base_arrival_date_time": "20251201T084800",
+            "data_freshness": "base_schedule",
+            "to": {
+              "id": "stop_point:SNCF:87721001:Train",
+              "name": "Lyon Vaise (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87721001:Train",
+                "name": "Lyon Vaise",
+                "label": "Lyon Vaise (Lyon)",
+                "coord": {
+                  "lon": "4.804186",
+                  "lat": "45.77976"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87721001",
+                  "name": "Lyon Vaise",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87721001"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87721001"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Vaise (Lyon)",
+                  "coord": {
+                    "lon": "4.804186",
+                    "lat": "45.77976"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "from": {
+              "id": "stop_point:SNCF:87722025:Train",
+              "name": "Lyon Perrache (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87722025:Train",
+                "name": "Lyon Perrache",
+                "label": "Lyon Perrache (Lyon)",
+                "coord": {
+                  "lon": "4.825777",
+                  "lat": "45.748508"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87722025",
+                  "name": "Lyon Perrache",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87722025"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87722025"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "additional_informations": [
+              "regular"
+            ],
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  4.825777,
+                  45.748508
+                ],
+                [
+                  4.804186,
+                  45.77976
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 3858
+                }
+              ]
+            },
+            "type": "public_transport",
+            "display_informations": {
+              "commercial_mode": "REGIONAURA",
+              "network": "REGIONAURA",
+              "direction": "Villefranche-sur-Saône (Villefranche-sur-Saône)",
+              "label": "C24",
+              "color": "",
+              "code": "C24",
+              "headsign": "887110",
+              "name": "C24",
+              "links": [
+                {
+                  "templated": false,
+                  "rel": "terminus",
+                  "internal": true,
+                  "type": "stop_area",
+                  "id": "stop_area:SNCF:87722587"
+                }
+              ],
+              "text_color": "",
+              "trip_short_name": "887110",
+              "company": "SNCF Voyageurs",
+              "description": "",
+              "physical_mode": "TER / Intercités",
+              "equipments": []
+            },
+            "links": [
+              {
+                "type": "company",
+                "id": "company:SNCF:1187"
+              },
+              {
+                "type": "vehicle_journey",
+                "id": "vehicle_journey:SNCF:2025-12-01:887110:1187:Train"
+              },
+              {
+                "type": "line",
+                "id": "line:SNCF:FR:Line::84762773-6B8B-4442-9CC3-2B637DB175D6:"
+              },
+              {
+                "type": "route",
+                "id": "route:SNCF:FR:Line::84762773-6B8B-4442-9CC3-2B637DB175D6:"
+              },
+              {
+                "type": "commercial_mode",
+                "id": "commercial_mode:FR:Branding::f4fa116c-2d6a-4696-b6c9-47195206d6f4:"
+              },
+              {
+                "type": "physical_mode",
+                "id": "physical_mode:Train"
+              },
+              {
+                "type": "network",
+                "id": "network:SNCF:FR:Branding::f4fa116c-2d6a-4696-b6c9-47195206d6f4:"
+              }
+            ],
+            "stop_date_times": [
+              {
+                "departure_date_time": "20251201T084400",
+                "base_departure_date_time": "20251201T084400",
+                "arrival_date_time": "20251201T084000",
+                "base_arrival_date_time": "20251201T084000",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87722025:Train",
+                  "name": "Lyon Perrache",
+                  "label": "Lyon Perrache (Lyon)",
+                  "coord": {
+                    "lon": "4.825777",
+                    "lat": "45.748508"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              },
+              {
+                "departure_date_time": "20251201T084900",
+                "base_departure_date_time": "20251201T084900",
+                "arrival_date_time": "20251201T084800",
+                "base_arrival_date_time": "20251201T084800",
+                "stop_point": {
+                  "id": "stop_point:SNCF:87721001:Train",
+                  "name": "Lyon Vaise",
+                  "label": "Lyon Vaise (Lyon)",
+                  "coord": {
+                    "lon": "4.804186",
+                    "lat": "45.77976"
+                  },
+                  "links": [],
+                  "equipments": []
+                },
+                "additional_informations": [],
+                "links": []
+              }
+            ]
+          },
+          {
+            "id": "V8YY85Gi6ccusQ2aRKieiL_0",
+            "duration": 0,
+            "co2_emission": {
+              "value": 0,
+              "unit": "gEC"
+            },
+            "departure_date_time": "20251201T084800",
+            "arrival_date_time": "20251201T084800",
+            "to": {
+              "id": "stop_area:SNCF:87721001",
+              "name": "Lyon Vaise (Lyon)",
+              "quality": 0,
+              "stop_area": {
+                "id": "stop_area:SNCF:87721001",
+                "name": "Lyon Vaise",
+                "codes": [
+                  {
+                    "type": "source",
+                    "value": "87721001"
+                  },
+                  {
+                    "type": "uic",
+                    "value": "87721001"
+                  }
+                ],
+                "timezone": "Europe/Paris",
+                "label": "Lyon Vaise (Lyon)",
+                "coord": {
+                  "lon": "4.804186",
+                  "lat": "45.77976"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ]
+              },
+              "embedded_type": "stop_area"
+            },
+            "from": {
+              "id": "stop_point:SNCF:87721001:Train",
+              "name": "Lyon Vaise (Lyon)",
+              "quality": 0,
+              "stop_point": {
+                "id": "stop_point:SNCF:87721001:Train",
+                "name": "Lyon Vaise",
+                "label": "Lyon Vaise (Lyon)",
+                "coord": {
+                  "lon": "4.804186",
+                  "lat": "45.77976"
+                },
+                "links": [],
+                "administrative_regions": [
+                  {
+                    "id": "admin:fr:69123",
+                    "name": "Lyon",
+                    "level": 8,
+                    "zip_code": "",
+                    "label": "Lyon",
+                    "insee": "69123",
+                    "coord": {
+                      "lon": "4.8320114",
+                      "lat": "45.7578137"
+                    }
+                  }
+                ],
+                "stop_area": {
+                  "id": "stop_area:SNCF:87721001",
+                  "name": "Lyon Vaise",
+                  "codes": [
+                    {
+                      "type": "source",
+                      "value": "87721001"
+                    },
+                    {
+                      "type": "uic",
+                      "value": "87721001"
+                    }
+                  ],
+                  "timezone": "Europe/Paris",
+                  "label": "Lyon Vaise (Lyon)",
+                  "coord": {
+                    "lon": "4.804186",
+                    "lat": "45.77976"
+                  },
+                  "links": []
+                },
+                "equipments": []
+              },
+              "embedded_type": "stop_point"
+            },
+            "geojson": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  4.804186,
+                  45.77976
+                ],
+                [
+                  4.804186,
+                  45.77976
+                ]
+              ],
+              "properties": [
+                {
+                  "length": 0
+                }
+              ]
+            },
+            "mode": "walking",
+            "type": "crow_fly",
+            "links": []
+          }
+        ],
+        "previewModes": [
+          "TGV INOUI",
+          "REGIONAURA C24"
+        ],
+        "transfers": 1
+      }
     }
   ]
 }

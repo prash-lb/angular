@@ -17,7 +17,7 @@ export function buildNavitiaDateTime(date: string | null | undefined): string {
   const day = (datePart || '').replace(/-/g, '');
   const time = `${hour}${minute}00`; // hhmmss
 
-  return `${day}T${time}`; // YYYYMMDDThhmmss
+  return `${day}T${time}`;
 }
 
 export function calculateDuration(departure: string, arrival: string): string {
@@ -31,12 +31,17 @@ export function calculateDuration(departure: string, arrival: string): string {
 
     const hmatch = t.match(/^(\d{1,2})h(\d{1,2})$/);
     if (hmatch) {
-      return { hours: parseInt(hmatch[1], 10), minutes: parseInt(hmatch[2], 10) };
+      return {
+        hours: parseInt(hmatch[1], 10),
+        minutes: parseInt(hmatch[2], 10),
+      };
     }
-    // extraire navitia time format
     const navitia = t.match(/T(\d{2})(\d{2})\d{2}$/);
     if (navitia) {
-      return { hours: parseInt(navitia[1], 10), minutes: parseInt(navitia[2], 10) };
+      return {
+        hours: parseInt(navitia[1], 10),
+        minutes: parseInt(navitia[2], 10),
+      };
     }
     return null;
   }

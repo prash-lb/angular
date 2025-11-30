@@ -108,8 +108,6 @@ export interface DisplayInfo {
   mode: string;
   direction: string;
   commercial_mode: string;
-
-  // Champs réellement renvoyés par Navitia (optionnels)
   line?: string;
   label?: string;
   code?: string;

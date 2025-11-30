@@ -3,8 +3,6 @@
   (click)="onReserveClick()"
 >
   <div class="space-y-3">
-
-    <!-- Billet-style header -->
     <div class="flex items-center gap-4">
       <div class="flex-1">
         <div class="flex items-center gap-3">
@@ -14,18 +12,30 @@
           </div>
 
           <div class="flex-1 flex flex-col items-center justify-center">
-            <p class="text-2xl font-bold text-indigo-600 mb-2">{{ duration() }}</p>
+            <p class="text-2xl font-bold text-indigo-600 mb-2">
+              {{ duration() }}
+            </p>
             <div class="flex items-center w-full">
               <div class="h-px bg-slate-300 flex-1"></div>
-                <svg
+              <svg
                 class="w-4 h-4 mx-2 text-slate-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
               </svg>
               <div class="h-px bg-slate-300 flex-1"></div>
             </div>
@@ -36,24 +46,20 @@
             <p class="text-slate-600 text-sm mt-1">{{ destination() }}</p>
           </div>
         </div>
-
       </div>
 
-      <div class="text-right">
-      </div>
+      <div class="text-right"></div>
     </div>
 
-    
-    <!-- Tags preview -->
     @if (previewModes().length > 0) {
     <div class="flex items-center gap-2 pt-2">
       @for (m of previewModes(); track $index) {
-        <span class="inline-flex items-center rounded-full bg-indigo-50 text-indigo-700 px-3 py-1 text-sm font-semibold uppercase tracking-wide ring-1 ring-inset ring-indigo-700/10">{{ m }}</span>
+      <span
+        class="inline-flex items-center rounded-full bg-indigo-50 text-indigo-700 px-3 py-1 text-sm font-semibold uppercase tracking-wide ring-1 ring-inset ring-indigo-700/10"
+        >{{ m }}</span
+      >
       }
     </div>
     }
-
-    <!-- footer removed to avoid repetition -->
-
   </div>
 </div>

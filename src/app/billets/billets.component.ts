@@ -24,7 +24,6 @@ export class BilletsComponent implements OnInit {
   public billets: WritableSignal<Billet[]> = signal<Billet[]>([]);
   public billetTermine: WritableSignal<Billet[]> = signal<Billet[]>([]);
   public billetFutur: WritableSignal<Billet[]> = signal<Billet[]>([]);
-
   public activeTab: WritableSignal<'a-venir' | 'historique' | 'tous'> = signal<
     'a-venir' | 'historique' | 'tous'
   >('tous');
@@ -36,7 +35,6 @@ export class BilletsComponent implements OnInit {
         this.billets.set(listeBillets);
         this.filterBillet();
         this.loading.set(false);
-        console.log(this.billets(), this.billetFutur(), this.billetTermine());
       },
       error: (err: Error) => {
         console.error(err);
@@ -44,6 +42,7 @@ export class BilletsComponent implements OnInit {
       },
     });
   }
+
   ngOnInit(): void {
     this.loadings();
   }
@@ -124,6 +123,9 @@ export class BilletsComponent implements OnInit {
     this.billetService.deleteBillet(billet.id).subscribe({
       next: () => {
         this.loadings();
+      },
+      error: (err: Error) => {
+        console.error(err);
       },
     });
   }

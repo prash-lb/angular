@@ -1,4 +1,4 @@
-import { Section } from "./Place.interface";
+import { Section } from './Place.interface';
 
 export interface Voyage {
   depart: string;
@@ -8,7 +8,6 @@ export interface Voyage {
   nombreVoyageur: number;
   duration: string;
   sections: Section[];
-  // Aperçu optionnel pour l'affichage dans les cartes
   previewModes?: string[];
   transfers?: number;
 }
